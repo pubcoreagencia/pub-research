@@ -1,84 +1,169 @@
-# 🧪 PUB Research — Laboratório de Pesquisas da PUB
+# 🧪 PUB Research — Laboratório de Repositórios para Aplicação nos Projetos PUB
 
 > **Organização:** [pubcoreagencia](https://github.com/pubcoreagencia)  
-> **Propósito:** Descoberta, avaliação e documentação de skills, repositórios open source, IAs, ferramentas e tecnologias para o hub de criação e produção musical da PUB.
+> **Propósito:** Catálogo curado de repositórios (externos + internos) prontos para **reuso, integração e aplicação prática** nos produtos da holding PUB.
 
 ---
 
-## 📁 Estrutura do Repositório
+## 🎯 **O que é (e o que NÃO é)**
+
+| ✅ **É** | ❌ **Não é** |
+|----------|--------------|
+| Laboratório de **componentes reutilizáveis** | Pub Neural (memória institucional) |
+| **Como aplicar** em cada projeto PUB | Arquivo morto de links |
+| Decisão: **Adotar / Adaptar / Monitorar / Descartar** | Bookmark collection |
+| Código, configs, patterns **prontos para uso** | Teoria sem prática |
+| Foco: **velocidade de integração** | Documentação exhaustiva |
+
+---
+
+## 📁 **Estrutura Orientada à Aplicação**
 
 ```
 pub-research/
-├── skills/          # Skills descobertas/avaliadas (OpenClaw, Claude Code, etc.)
-├── repos/           # Repositórios open source relevantes (forks, mirrors, refs)
-├── ias/             # Modelos, provedores, benchmarks de IA
-├── tools/           # Ferramentas, CLIs, utilidades
-├── workflows/       # Workflows, pipelines, automações testadas
-├── docs/            # Documentação interna, guias, decisões
-└── references/      # Links, papers, artigos, benchmarks externos
+├── components/           # 🧩 Componentes prontos para integrar
+│   ├── ui/              # Design systems, component libs, icons
+│   ├── audio/           # WebAudio, VST, DSP, DAW components
+│   ├── ai/              # Model routing, fallback chains, RAG, agents
+│   ├── scraping/        # Crawlers, browser automation, extractors
+│   ├── auth/            # Auth patterns, scoped permissions, mTLS
+│   └── infra/           # Monorepo, multi-tenancy, edge deploy
+├── integrations/        # 🔌 Guias de integração por projeto PUB
+│   ├── pub-machine/     # O que usar no Machine (v1, v2, SaaS)
+│   ├── pub-records/     # O que usar no Records (DAW, Beats, Audio Lab)
+│   ├── pub-ia/          # O que usar no IA Hub (models, routing, fine-tune)
+│   ├── pub-ecom/        # O que usar no Ecom (catalog, import actors)
+│   ├── pubgrowth/       # O que usar no PubGrowth (Cloudflare, PIX, RLS)
+│   ├── pub-acp/         # O que usar no ACP (bridge, NDJSON, Antigravity)
+│   └── pub-9router/     # O que usar no 9Router (routing, metrics)
+├── decisions/           # ⚖️ Decisões de adoção (ADR-style)
+│   ├── ADOPTED/         # Já integrados + como usar
+│   ├── ADAPTING/        # Em adaptação + blockers
+│   ├── MONITORING/      # Acompanhando + critérios de adoção
+│   └── DISCARDED/       # Avaliados + por que não
+├── benchmarks/          # 📊 Benchmarks reais (não teóricos)
+│   ├── models/          # Free vs paid, latency, quality, cost
+│   ├── scraping/        # Crawl4AI vs browser-use vs Scrapling
+│   ├── audio/           # WebAudio vs native VST vs WASM
+│   └── routing/         # 9Router vs OpenRouter vs custom
+├── templates/           # 📋 Templates de avaliação + integração
+│   ├── component-evaluation.md
+│   ├── integration-guide.md
+│   ├── benchmark-template.md
+│   └── decision-record.md
+└── INDEX.md             # 📇 Catálogo único navegável
 ```
 
 ---
 
-## 🎯 Objetivos
+## 🔄 **Fluxo do Laboratório**
 
-| Área | Foco |
-|------|------|
-| **Skills** | Skills OpenClaw, plugins, agents, MCP servers, workflows reutilizáveis |
-| **Repositórios** | Projetos open source para fork, estudo, integração ou inspiração |
-| **IAs** | Modelos (LLM, diffusion, audio, video), provedores, benchmarks, costs |
-| **Tools** | CLIs, SDKs, frameworks, dev tools que aceleram o hub |
-| **Workflows** | Pipelines CI/CD, automações, agentes, orquestração |
-| **Docs** | ADRs, guias de setup, decisões de arquitetura, checklists |
-
----
-
-## 🔬 Processo de Descoberta
-
-1. **Descoberta** → Encontra skill/repo/IA/tool relevante
-2. **Avaliação** → Testa, faz benchmark, verifica licença, manutenção
-3. **Documentação** → Registra em `docs/` ou pasta correspondente com:
-   - O que é / pra que serve
-   - Como instalar / configurar
-   - Prós / contras / limitações
-   - Decisão: **adotar** / **monitorar** / **descartar**
-4. **Integração** (se adotado) → Move pra produção, cria skill wrapper, etc.
+```
+DESCOBRIR
+    │
+    ▼
+AVALIAR (template component-evaluation.md)
+    │
+    ├──→ ADOTAR → INTEGRAR (template integration-guide.md) → DOCUMENTAR em decisions/ADOPTED
+    ├──→ ADAPTAR → PROTOTIPAR → VALIDAR → ADOTAR
+    ├──→ MONITORAR → CRITÉRIOS claros de reavaliação
+    └──→ DESCARTAR → REGISTRAR motivo em decisions/DISCARDED
+```
 
 ---
 
-## 📋 Templates
+## 📦 **Catálogo Atual (27 componentes)**
 
-- [`docs/templates/skill-evaluation.md`](docs/templates/skill-evaluation.md) — Avaliação de skill
-- [`docs/templates/repo-evaluation.md`](docs/templates/repo-evaluation.md) — Avaliação de repositório
-- [`docs/templates/ia-benchmark.md`](docs/templates/ia-benchmark.md) — Benchmark de modelo IA
-- [`docs/templates/tool-evaluation.md`](docs/templates/tool-evaluation.md) — Avaliação de ferramenta
+### 🔧 **Por Categoria Técnica**
+
+| Categoria | Componentes | Status |
+|-----------|-------------|--------|
+| **UI / Design System** | shadcn/ui + Radix, Lucide Icons, Tailwind Plugins, Excalidraw | ✅ Adotar |
+| **IA / Model Routing** | PUB IA Hub, 9Router Cloud, OpenRouter (4 free models), Context7 | ✅ Adotar / 👀 Monitorar |
+| **Agentes / ACP** | pub-acp-lab (ACP Bridge), browser-use, Crawl4AI, Automated Agentic Agency (ref) | ✅ Adotar / 👀 Monitorar |
+| **Audio / Music** | XP Audio Lab (VST/WASM), PUB DAW, WebAudio stack | ✅ Adotar |
+| **Scraping / Data** | pub-scrapping, Crawl4AI, browser-use, Scrapling (monitor) | ✅ Adotar / 👀 Monitorar |
+| **Infra / SaaS** | pubgrowth (Cloudflare+Supabase+PIX), pub-machine-saas (multi-tenant), monorepo patterns | ✅ Adotar |
+| **Governance** | pub-core-os (Git closure, master context), neural-os (authority hierarchy) | ✅ Adotar |
+
+### 🎯 **Por Projeto PUB (Onde Aplicar)**
+
+| Projeto PUB | Componentes Recomendados | Integração |
+|-------------|--------------------------|------------|
+| **pub-machine** (v1/v2/SaaS) | pub-scrapping, Crawl4AI, browser-use, leadcore, 9Router, pub-acp-lab | `integrations/pub-machine/` |
+| **pub-records** (DAW/Beats/Label) | XP Audio Lab, WebAudio stack, Excalidraw (storyboard), shadcn/ui | `integrations/pub-records/` |
+| **pub-ia** (Hub IA) | 9Router Cloud, OpenRouter free models, Context7 (monitor), fine-tune pipeline | `integrations/pub-ia/` |
+| **pub-ecom** | Monorepo patterns, Catalog worker, Browser import actors, TanStack Start | `integrations/pub-ecom/` |
+| **pubgrowth** | Cloudflare Workers, Supabase RLS, Banco Inter PIX, mTLS, AI Continuity | `integrations/pubgrowth/` |
+| **pub-acp** | ACP Bridge, NDJSON protocol, Antigravity CLI, Scoped permissions | `integrations/pub-acp/` |
+| **pub-9router** | Model routing, Metrics dashboard, Encrypted DB, Fallback chains | `integrations/pub-9router/` |
 
 ---
 
-## 🏷️ Tags Comuns
+## ⚡ **Quick Start: Como Usar Este Laboratório**
 
-`#skill` `#openclaw` `#mcp` `#agent` `#workflow` `#automation`  
-`#llm` `#diffusion` `#audio-gen` `#video-gen` `#multimodal`  
-`#open-source` `#fork-candidate` `#integration-ready`  
-`#adopted` `#monitoring` `#discarded` `#deprecated`
+### 1. **Preciso de X no projeto Y**
+```bash
+# 1. Veja INDEX.md → procure categoria ou projeto
+# 2. Leia a avaliação em components/ ou decisions/ADOPTED/
+# 3. Siga integration-guide.md do componente
+# 4. Registre decisões no seu projeto
+```
+
+### 2. **Encontrei um repo interessante**
+```bash
+# 1. Crie avaliação em components/<categoria>/<nome>.md (use template)
+# 2. Rode benchmark se aplicável (benchmark-template.md)
+# 3. Decida: ADOTAR/ADAPTAR/MONITORAR/DESCARTAR
+# 4. Se ADOTAR: crie integration-guide.md + mova para decisions/ADOPTED/
+# 5. Atualize INDEX.md
+```
+
+### 3. **Quero benchmarkar alternativas**
+```bash
+# 1. Crie benchmark em benchmarks/<categoria>/<nome>.md
+# 2. Execute testes reais (não teóricos)
+# 3. Documente: métricas, custos, latência, facilidade integração
+# 4. Atualize decisões afetadas
+```
 
 ---
 
-## 🔗 Links Úteis
+## 📋 **Templates Disponíveis** (`templates/`)
 
-- [OpenClaw Docs](https://docs.openclaw.ai)
-- [ClawHub Skills](https://clawhub.openclaw.ai)
-- [Awesome OpenClaw](https://github.com/openclaw/awesome-openclaw)
-- [PUB Core Agencia](https://github.com/pubcoreagencia)
+| Template | Para que serve |
+|----------|----------------|
+| `component-evaluation.md` | Avaliar novo componente (técnico + negócio + integração) |
+| `integration-guide.md` | Documentar como integrar em projeto específico |
+| `benchmark-template.md` | Benchmark comparativo com métricas reais |
+| `decision-record.md` | Registrar decisão ADR-style (contexto, decisão, consequências) |
 
 ---
 
-## 📝 Como Contribuir
+## 🏷️ **Tags de Navegação**
 
-1. Abra uma **Issue** com a descoberta (link, descrição, por que é relevante)
-2. Use o template correspondente em `docs/templates/`
-3. Marque com labels: `discovery`, `evaluation`, `integration`
-4. Após avaliação, mova para a pasta correspondente e atualize o status
+`#ui` `#design-system` `#ai` `#models` `#routing` `#agents` `#acp` `#audio` `#webaudio` `#vst` `#wasm` `#scraping` `#crawling` `#browser-automation` `#saas` `#multi-tenancy` `#cloudflare` `#supabase` `#pix` `#mtls` `#monorepo` `#governance` `#adopted` `#monitoring` `#reference` `#discarded`
+
+---
+
+## 🔗 **Links Rápidos**
+
+- **Catálogo completo:** [INDEX.md](INDEX.md)
+- **Decisões de adoção:** `decisions/ADOPTED/`
+- **Guias de integração por projeto:** `integrations/`
+- **Benchmarks:** `benchmarks/`
+- **Templates:** `templates/`
+
+---
+
+## 📝 **Governança do Laboratório**
+
+1. **Toda descoberta passa por avaliação** (template obrigatório)
+2. **Benchmark real > documentação do vendor**
+3. **Decisão registrada = rastreável** (ADR em `decisions/`)
+4. **Integração documentada = reutilizável** (guide em `integrations/`)
+5. **Revisão trimestral** de `MONITORING` → mover para `ADOPTED` ou `DISCARDED`
+6. **Owner:** Squad PUB Research (Matheus + Genildo3000)
 
 ---
 

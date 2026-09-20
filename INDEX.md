@@ -1,102 +1,123 @@
-# 📇 Índice de Descobertas — PUB Research
+# 📇 Catálogo do Laboratório — PUB Research
 
-> Atualizado automaticamente. Última atualização: 2026-09-20
-
----
-
-## 🎯 Skills (OpenClaw, MCP, Agents, Workflows)
-
-| Status | Skill | Fonte | Descrição Curta | Avaliação | Tags |
-|--------|-------|-------|-----------------|-----------|------|
-| 🔍 Descoberta | *Nenhuma registrada ainda* | | | | |
+> **Laboratório de Repositórios para Aplicação nos Projetos PUB**  
+> Última atualização: 2026-09-20
 
 ---
 
-## 📦 Repositórios Open Source (Externos)
+## 🧩 **Componentes por Categoria**
 
-| Status | Repo | Owner | Descrição Curta | Avaliação | Tags |
-|--------|------|-------|-----------------|-----------|------|
-| ✅ Referência | [Automated-Agentic-AI-Web-Agency](https://github.com/JackInSightsV2/Automated-Agentic-AI-Web-Agency) | JackInSightsV2 | Agência web automatizada completa (15 agentes, Bun, Supabase, Vercel, Bland.ai, Stripe) | [Repo Evaluation](repos/automated-agentic-ai-web-agency.md) | #automation #web-agency #ai-agents #bun #supabase #vercel #bland-ai #stripe #mit |
-| ✅ Adotar | [shadcn/ui + Radix + Tailwind](https://github.com/shadcn-ui/ui) | shadcn-ui | Design system copy-paste, acessível, TypeScript, Tailwind + Radix | [Repo Evaluation](repos/frontend-design.md) | #design-system #components #tailwind #radix #react #mit |
-| 👀 Monitorar | [HeyGen Hyperframes](https://www.heygen.com) | HeyGen | Avatar/video generation SaaS, lip-sync estado da arte | [Repo Evaluation](repos/heygen-hyperframes.md) | #video-gen #avatar #lip-sync #saas #proprietary |
-| ✅ Adotar | [Lucide Icons + Tailwind Plugins](https://lucide.dev) | lucide-icons | Icon set padrão indústria + plugins Tailwind (typography, forms, aspect-ratio) | [Repo Evaluation](repos/ui-ux-pro-max.md) | #icons #lucide #tailwind-plugins #design-tokens #mit |
-| ✅ Adotar | [Excalidraw](https://github.com/excalidraw/excalidraw) | excalidraw | Whiteboard/diagrams hand-drawn style, embeddable React, Mermaid support | [Repo Evaluation](repos/excalidraw.md) | #whiteboard #diagrams #mermaid #embeddable #react #mit |
-| 👀 Monitorar | [Context7](https://upstash.com) | Upstash | Context management para LLMs (RAG, memory, compression) | [Repo Evaluation](repos/context7.md) | #context #rag #memory #vector #upstash #saas |
-| 👀 Monitorar | [Archify](https://archify.io) | Archify | Diagramas de arquitetura auto-gerados de código/infra (Terraform, K8s) | [Repo Evaluation](repos/archify.md) | #architecture #diagrams #iac #terraform #saas |
-| ✅ Adotar | [browser-use](https://github.com/browser-use/browser-use) | browser-use | Browser automation para agentes LLM, stealth, visual debugging | [Repo Evaluation](repos/agent-browser.md) | #browser-automation #agents #playwright #python #mit |
-| 👀 Monitorar | [Grill Me](https://grillme.app) | grill-me | Code review bot com humor ("roast"), GitHub integration | [Repo Evaluation](repos/grill-me.md) | #code-review #llm #github-bot #humor #saas |
-| ✅ Adotar | [Crawl4AI](https://github.com/unclecode/crawl4ai) | unclecode | Web crawler otimizado para LLMs/RAG, extração Markdown limpa | [Repo Evaluation](repos/crawl4ai.md) | #crawling #scraping #rag #llm #python #mit |
+### 🎨 **UI / Design System** (`components/ui/`)
+| Componente | Status | Para que serve | Onde aplicar |
+|------------|--------|----------------|--------------|
+| [shadcn/ui + Radix + Tailwind](components/ui/shadcn-ui-radix-tailwind.md) | ✅ Adotar | Design system copy-paste, acessível, TypeScript | Todos projetos (dashboards, admin, landing) |
+| [Lucide Icons + Tailwind Plugins](components/ui/lucide-icons-tailwind-plugins.md) | ✅ Adotar | Icon set padrão + plugins (typography, forms, aspect-ratio) | Todos projetos |
+| [Excalidraw](components/ui/excalidraw.md) | ✅ Adotar | Whiteboard/diagrams hand-drawn, embeddable React, Mermaid | pub-records (storyboard), pub-machine (architecture), pub-ia |
 
----
+### 🤖 **IA / Modelos / Agentes** (`components/ai/`)
+| Componente | Status | Para que serve | Onde aplicar |
+|------------|--------|----------------|--------------|
+| [PUB Neural](components/ai/pub-neural.md) | ✅ Adotar | Cérebro cognitivo, retrieval híbrido, promoção institucional | Base para todos (memory, retrieval, lessons) |
+| [PUB Machine](components/ai/pub-machine.md) | ✅ Adotar | Motor prospecção 6 camadas (Signal→Audience→Intent→Lead→Conversion) | pub-machine, pub-machine-2, pub-machine-saas |
+| [PUB IA Hub](components/ai/pub-ia.md) | ✅ Adotar | Model registry, fallback chains (4 free OpenRouter), fine-tuning | pub-ia, 9Router, OpenClaw config |
+| [PUB ACP Lab](components/ai/pub-acp-lab.md) | ✅ Adotar | ACP Bridge → Antigravity CLI, NDJSON, scoped permissions | pub-acp, PDL integration, Capability Fabric |
+| [9Router Cloud](components/ai/pub-9router-cloud.md) | ✅ Adotar | Servidor roteamento modelos 24/7, métricas, fallback, quotas | pub-9router, OpenClaw, PUB IA |
+| [PUB Machine 2](components/ai/pub-machine-2.md) | ✅ Adotar | 2ª gen: closed loop, autonomia total, PDL/Neural/ACP/Fabric | pub-machine-2 (próxima geração) |
+| [LeadCore](components/ai/leadcore.md) | ✅ Adotar | CRM B2B unificado, enrichment, scoring, LGPD | pub-machine, pub-ecom, pubgrowth |
+| [browser-use](components/ai/browser-use.md) | ✅ Adotar | Browser automation para agentes LLM, stealth, visual debug | pub-machine (scout), pub-scrapping, research agents |
+| [Crawl4AI](components/scraping/crawl4ai.md) | ✅ Adotar | Crawler otimizado LLMs/RAG, Markdown limpo | pub-scrapping, pub-neural (ingestion), research |
+| [pub-scrapping](components/scraping/pub-scrapping.md) | ✅ Adotar | Scrapers Shopee/ML, anti-detection, incremental | pub-machine, pub-ecom, pubgrowth |
+| [Automated Agentic Web Agency](components/ai/automated-agentic-ai-web-agency.md) | 📚 Referência | Arquitetura 15 agentes, HITL, queue, dashboard | Referência para pub-machine/PDL architecture |
+| [HeyGen Hyperframes](components/ai/heygen-hyperframes.md) | 👀 Monitorar | Avatar/video SaaS, lip-sync estado da arte | pub-records (lyric videos), content automation |
+| [Context7](components/ai/context7.md) | 👀 Monitorar | Context management LLMs (RAG, memory, compression) | pub-neural (se escalar), PDL |
+| [Archify](components/ai/archify.md) | 👀 Monitorar | Diagramas arquitetura auto-gerados (Terraform, K8s) | pub-core-os, pub-ecom, pub-machine |
+| [Grill Me](components/ai/grill-me.md) | 👀 Monitorar | Code review bot com humor, GitHub integration | Todos (CI/CD code review) |
 
-## 📦 Repositórios Internos (pubcoreagencia)
+### 🎵 **Audio / Music** (`components/audio/`)
+| Componente | Status | Para que serve | Onde aplicar |
+|------------|--------|----------------|--------------|
+| [PUB Records](components/audio/pub-records.md) | ✅ Adotar | Gravadora, estúdio, Beats marketplace, PUB DAW | pub-records (core) |
+| [XP Audio Lab](components/audio/xp-audio-lab.md) | ✅ Adotar | Sound design, VST/WebAudio, WASM DSP, AudioWorklets | pub-records (DAW, plugins), R&D audio |
 
-| Status | Repo | Descrição Curta | Avaliação | Tags |
-|--------|------|-----------------|-----------|------|
-| ✅ Adotar | **pub-neural** | Cérebro cognitivo, memória episódica/semântica, orquestrador multiagente, retrieval híbrido, promoção institucional | [Repo Evaluation](repos/pub-neural.md) | #neural #memory #retrieval #graph #vector #promotion #python |
-| ✅ Adotar | **pub-machine** | Motor prospecção/geração negócios: Signal → Audience → Intent → Lead → Conversion (6 camadas, 25+ testes) | [Repo Evaluation](repos/pub-machine.md) | #machine #prospecting #geofence #audience #lead-scoring #typescript |
-| ✅ Adotar | **pub-records** | Gravadora, estúdio, PUB Beats (marketplace), PUB DAW (WebAudio), XP Audio Lab (VST/R&D) | [Repo Evaluation](repos/pub-records.md) | #music #label #daw #webaudio #beats #vst #javascript |
-| ✅ Adotar | **pub-ia** | Hub orquestrador IA generativa/preditiva: model registry, fallback chains, fine-tuning, RAG | [Repo Evaluation](repos/pub-ia.md) | #ai-hub #model-registry #fallback #fine-tuning #openrouter |
-| ✅ Adotar | **pub-dev-loop** | Prototipação rápida + The Living 3D Office (workspace visual 3D agentes) + Free model benchmarks | [Repo Evaluation](repos/pub-dev-loop.md) | #prototyping #3d-office #spatial-memory #free-models #benchmark |
-| ✅ Adotar | **pub-scrapping** | Engenharia scrapers/ingestores (Shopee, Mercado Livre), anti-detection, incremental crawl | [Repo Evaluation](repos/pub-scrapping.md) | #scraping #ecommerce #anti-detection #incremental #typescript |
-| ✅ Adotar | **pub-core-os** | Sistema operacional institucional: governança canônica, Git closure, naming, layer separation | [Repo Evaluation](repos/pub-core-os.md) | #governance #master-context #git-closure #authority #canonical |
-| ✅ Adotar | **pub-ecom** | Monorepo e-commerce unificado: Core, Hub App, Catalog Worker, Landing, Browser Import Actors | [Repo Evaluation](repos/pub-ecom.md) | #ecommerce #monorepo #catalog-sync #browser-import #tanstack |
-| ✅ Adotar | **xp-audio-lab** | Laboratório sound design experimental, plugins VST/WebAudio, WASM DSP, AudioWorklets | [Repo Evaluation](repos/xp-audio-lab.md) | #audio #vst #webaudio #wasm #dsp #sound-design #typescript |
-| ✅ Adotar | **pub-acp-lab** | Agent Client Protocol Bridge → Google Antigravity CLI, NDJSON, scoped permissions, ChatGPT browser bridge | [Repo Evaluation](repos/pub-acp-lab.md) | #acp #antigravity #bridge #ndjson #scoped-permissions #chatgpt |
-| ✅ Adotar | **pub-9router-cloud** | Servidor 9Router 24/7: roteamento modelos, métricas, fallback, quotas, DB criptografado, painel web | [Repo Evaluation](repos/pub-9router-cloud.md) | #9router #model-routing #fallback #metrics #cloudflare #railway |
-| ✅ Adotar | **neural-os** | PUB MASTER MEGA BLASTER CONTEXT — autoridade institucional canônica, hierarquia evidência | [Repo Evaluation](repos/neural-os.md) | #master-context #governance #authority #confidence-levels |
-| ✅ Adotar | **leadcore** | Core inteligência contatos/CRM B2B unificado, enrichment, scoring, segmentação, LGPD | [Repo Evaluation](repos/leadcore.md) | #crm #contacts #enrichment #scoring #lgpd #b2b |
-| ✅ Adotar | **pub-machine-2** | 2ª geração Machine: autonomia total, closed loop, PDL/Neural/ACP/Fabric integration nativa | [Repo Evaluation](repos/pub-machine-2.md) | #machine-v2 #closed-loop #autonomy #pdl #neural #acp |
-| ✅ Adotar | **pub-machine-saas** | Versão multi-tenant SaaS do Machine para clientes externos, billing, white-label | [Repo Evaluation](repos/pub-machine-saas.md) | #saas #multi-tenancy #billing #white-label #stripe |
-| ✅ Adotar | **pubgrowth-ai-evolution** | SaaS growth agency: TanStack Start + Cloudflare Workers + Supabase RLS + Banco Inter PIX + mTLS | [Repo Evaluation](repos/pubgrowth-ai-evolution.md) | #saas #growth #cloudflare #supabase #pix #mtls #tanstack |
+### 🕷️ **Scraping / Data** (`components/scraping/`)
+| Componente | Status | Para que serve | Onde aplicar |
+|------------|--------|----------------|--------------|
+| [Crawl4AI](components/scraping/crawl4ai.md) | ✅ Adotar | Crawler LLMs/RAG, Markdown limpo, chunking semântico | pub-neural ingestion, pub-scrapping, research |
+| [pub-scrapping](components/scraping/pub-scrapping.md) | ✅ Adotar | Scrapers produção (Shopee, ML), anti-detection | pub-machine, pub-ecom, pubgrowth |
 
----
-
-## 🤖 IAs (Modelos, Provedores, Benchmarks)
-
-| Status | Modelo | Provedor | Tipo | Avaliação | Tags |
-|--------|--------|----------|------|-----------|------|
-| 🔍 Descoberta | *Nenhuma registrada ainda* | | | | |
-
----
-
-## 🛠️ Tools (CLIs, SDKs, Frameworks)
-
-| Status | Tool | Tipo | Descrição Curta | Avaliação | Tags |
-|--------|------|------|-----------------|-----------|------|
-| 🔍 Descoberta | *Nenhuma registrada ainda* | | | | |
+### ☁️ **Infra / SaaS / Platform** (`components/infra/`)
+| Componente | Status | Para que serve | Onde aplicar |
+|------------|--------|----------------|--------------|
+| [PUB Core OS](components/infra/pub-core-os.md) | ✅ Adotar | Governança canônica, Git closure, master context template | Todos (governança) |
+| [Neural OS](components/infra/neural-os.md) | ✅ Adotar | PUB MASTER MEGA BLASTER CONTEXT (autoridade institucional) | Todos (authority hierarchy) |
+| [PUB Dev Loop](components/infra/pub-dev-loop.md) | ✅ Adotar | Prototipação rápida, 3D Office, free model benchmarks | Todos (prototyping, benchmarking) |
+| [PUB Ecom](components/infra/pub-ecom.md) | ✅ Adotar | Monorepo e-commerce, catalog worker, browser import actors | pub-ecom |
+| [PUB Machine SaaS](components/infra/pub-machine-saas.md) | ✅ Adotar | Multi-tenancy, billing Stripe, white-label | pub-machine-saas |
+| [PubGrowth AI](components/infra/pubgrowth-ai-evolution.md) | ✅ Adotar | Cloudflare Workers + Supabase RLS + Banco Inter PIX + mTLS | pubgrowth, template para SaaS |
 
 ---
 
-## ⚙️ Workflows / Pipelines / Automações
+## 🎯 **Integrações por Projeto PUB** (`integrations/`)
 
-| Status | Workflow | Fonte | Descrição Curta | Avaliação | Tags |
-|--------|----------|-------|-----------------|-----------|------|
-| 🔍 Descoberta | *Nenhuma registrada ainda* | | | | |
-
----
-
-## 📝 Legenda de Status
-
-- 🔍 **Descoberta** — Encontrado, pendente de avaliação
-- 🧪 **Em avaliação** — Testando, benchmarking
-- ✅ **Adotado** — Integrado ao hub / em uso
-- 👀 **Monitorando** — Acompanhando updates
-- 📚 **Referência** — Inspiração/estudo, não integrado
-- ❌ **Descartado** — Não atende necessidades
-- 📦 **Arquivado** — Deprecado/substituído
+| Projeto | Guia de Integração | Componentes-Chave |
+|---------|-------------------|-------------------|
+| **pub-machine** (v1/v2/SaaS) | `integrations/pub-machine/` | pub-scrapping, Crawl4AI, browser-use, leadcore, 9Router, pub-acp-lab, pub-machine-2 |
+| **pub-records** (DAW/Beats/Label) | `integrations/pub-records/` | XP Audio Lab, WebAudio stack, Excalidraw, shadcn/ui, HeyGen (monitor) |
+| **pub-ia** (Hub IA) | `integrations/pub-ia/` | 9Router Cloud, OpenRouter free models, Context7 (monitor), fine-tune pipeline |
+| **pub-ecom** | `integrations/pub-ecom/` | Monorepo patterns, Catalog worker, Browser import actors, TanStack Start |
+| **pubgrowth** | `integrations/pubgrowth/` | Cloudflare Workers, Supabase RLS, Banco Inter PIX, mTLS, AI Continuity |
+| **pub-acp** | `integrations/pub-acp/` | ACP Bridge, NDJSON protocol, Antigravity CLI, Scoped permissions |
+| **pub-9router** | `integrations/pub-9router/` | Model routing, Metrics dashboard, Encrypted DB, Fallback chains |
 
 ---
 
-## 📊 Estatísticas Rápidas
+## ⚖️ **Decisões de Adoção** (`decisions/`)
 
-- **Total de descobertas:** 27 (10 externos + 17 internos)
-- **Adotados:** 22 (5 externos + 17 internos)
-- **Em avaliação:** 0
-- **Monitorando:** 4 (externos)
-- **Referência:** 1 (externo)
-- **Descartados:** 0
+| Pasta | Descrição |
+|-------|-----------|
+| `ADOPTED/` | Componentes integrados + guias de uso |
+| `ADAPTING/` | Em adaptação + blockers identificados |
+| `MONITORING/` | Acompanhando + critérios claros de reavaliação |
+| `DISCARDED/` | Avaliados + motivo da não adoção |
 
 ---
 
-*Este índice é mantido manualmente. Para adicionar entradas, edite este arquivo ou use os templates em `docs/templates/`.*
+## 📊 **Benchmarks Reais** (`benchmarks/`)
+
+| Categoria | Benchmarks |
+|-----------|------------|
+| `models/` | Free vs paid: latency, quality, cost, context |
+| `scraping/` | Crawl4AI vs browser-use vs Scrapling vs pub-scrapping |
+| `audio/` | WebAudio vs native VST vs WASM DSP |
+| `routing/` | 9Router vs OpenRouter vs custom routing |
+
+---
+
+## 📋 **Templates** (`templates/`)
+
+| Template | Uso |
+|----------|-----|
+| `component-evaluation.md` | Avaliar novo componente |
+| `integration-guide.md` | Documentar integração em projeto |
+| `benchmark-template.md` | Benchmark comparativo métricas reais |
+| `decision-record.md` | ADR-style decision record |
+
+---
+
+## 📈 **Estatísticas**
+
+- **Total componentes:** 27 (10 externos + 17 internos)
+- **✅ Adotar:** 22 — Prontos para integração
+- **👀 Monitorar:** 4 — Critérios definidos para reavaliação
+- **📚 Referência:** 1 — Inspiração arquitetural
+- **❌ Descartado:** 0
+
+---
+
+## 🔍 **Navegação Rápida por Tag**
+
+`#ui` `#design-system` `#ai` `#models` `#routing` `#agents` `#acp` `#audio` `#webaudio` `#vst` `#wasm` `#scraping` `#crawling` `#browser-automation` `#saas` `#multi-tenancy` `#cloudflare` `#supabase` `#pix` `#mtls` `#monorepo` `#governance` `#adopted` `#monitoring` `#reference`
+
+---
+
+*Catálogo vivo — atualize ao adicionar/remover componentes ou mudar decisões*
