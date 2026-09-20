@@ -1,6 +1,6 @@
 # 📇 Índice de Descobertas — PUB Research
 
-> Atualizado automaticamente. Última atualização: 2026-09-19
+> Atualizado automaticamente. Última atualização: 2026-09-20
 
 ---
 
@@ -12,7 +12,7 @@
 
 ---
 
-## 📦 Repositórios Open Source
+## 📦 Repositórios Open Source (Externos)
 
 | Status | Repo | Owner | Descrição Curta | Avaliação | Tags |
 |--------|------|-------|-----------------|-----------|------|
@@ -26,6 +26,29 @@
 | ✅ Adotar | [browser-use](https://github.com/browser-use/browser-use) | browser-use | Browser automation para agentes LLM, stealth, visual debugging | [Repo Evaluation](repos/agent-browser.md) | #browser-automation #agents #playwright #python #mit |
 | 👀 Monitorar | [Grill Me](https://grillme.app) | grill-me | Code review bot com humor ("roast"), GitHub integration | [Repo Evaluation](repos/grill-me.md) | #code-review #llm #github-bot #humor #saas |
 | ✅ Adotar | [Crawl4AI](https://github.com/unclecode/crawl4ai) | unclecode | Web crawler otimizado para LLMs/RAG, extração Markdown limpa | [Repo Evaluation](repos/crawl4ai.md) | #crawling #scraping #rag #llm #python #mit |
+
+---
+
+## 📦 Repositórios Internos (pubcoreagencia)
+
+| Status | Repo | Descrição Curta | Avaliação | Tags |
+|--------|------|-----------------|-----------|------|
+| ✅ Adotar | **pub-neural** | Cérebro cognitivo, memória episódica/semântica, orquestrador multiagente, retrieval híbrido, promoção institucional | [Repo Evaluation](repos/pub-neural.md) | #neural #memory #retrieval #graph #vector #promotion #python |
+| ✅ Adotar | **pub-machine** | Motor prospecção/geração negócios: Signal → Audience → Intent → Lead → Conversion (6 camadas, 25+ testes) | [Repo Evaluation](repos/pub-machine.md) | #machine #prospecting #geofence #audience #lead-scoring #typescript |
+| ✅ Adotar | **pub-records** | Gravadora, estúdio, PUB Beats (marketplace), PUB DAW (WebAudio), XP Audio Lab (VST/R&D) | [Repo Evaluation](repos/pub-records.md) | #music #label #daw #webaudio #beats #vst #javascript |
+| ✅ Adotar | **pub-ia** | Hub orquestrador IA generativa/preditiva: model registry, fallback chains, fine-tuning, RAG | [Repo Evaluation](repos/pub-ia.md) | #ai-hub #model-registry #fallback #fine-tuning #openrouter |
+| ✅ Adotar | **pub-dev-loop** | Prototipação rápida + The Living 3D Office (workspace visual 3D agentes) + Free model benchmarks | [Repo Evaluation](repos/pub-dev-loop.md) | #prototyping #3d-office #spatial-memory #free-models #benchmark |
+| ✅ Adotar | **pub-scrapping** | Engenharia scrapers/ingestores (Shopee, Mercado Livre), anti-detection, incremental crawl | [Repo Evaluation](repos/pub-scrapping.md) | #scraping #ecommerce #anti-detection #incremental #typescript |
+| ✅ Adotar | **pub-core-os** | Sistema operacional institucional: governança canônica, Git closure, naming, layer separation | [Repo Evaluation](repos/pub-core-os.md) | #governance #master-context #git-closure #authority #canonical |
+| ✅ Adotar | **pub-ecom** | Monorepo e-commerce unificado: Core, Hub App, Catalog Worker, Landing, Browser Import Actors | [Repo Evaluation](repos/pub-ecom.md) | #ecommerce #monorepo #catalog-sync #browser-import #tanstack |
+| ✅ Adotar | **xp-audio-lab** | Laboratório sound design experimental, plugins VST/WebAudio, WASM DSP, AudioWorklets | [Repo Evaluation](repos/xp-audio-lab.md) | #audio #vst #webaudio #wasm #dsp #sound-design #typescript |
+| ✅ Adotar | **pub-acp-lab** | Agent Client Protocol Bridge → Google Antigravity CLI, NDJSON, scoped permissions, ChatGPT browser bridge | [Repo Evaluation](repos/pub-acp-lab.md) | #acp #antigravity #bridge #ndjson #scoped-permissions #chatgpt |
+| ✅ Adotar | **pub-9router-cloud** | Servidor 9Router 24/7: roteamento modelos, métricas, fallback, quotas, DB criptografado, painel web | [Repo Evaluation](repos/pub-9router-cloud.md) | #9router #model-routing #fallback #metrics #cloudflare #railway |
+| ✅ Adotar | **neural-os** | PUB MASTER MEGA BLASTER CONTEXT — autoridade institucional canônica, hierarquia evidência | [Repo Evaluation](repos/neural-os.md) | #master-context #governance #authority #confidence-levels |
+| ✅ Adotar | **leadcore** | Core inteligência contatos/CRM B2B unificado, enrichment, scoring, segmentação, LGPD | [Repo Evaluation](repos/leadcore.md) | #crm #contacts #enrichment #scoring #lgpd #b2b |
+| ✅ Adotar | **pub-machine-2** | 2ª geração Machine: autonomia total, closed loop, PDL/Neural/ACP/Fabric integration nativa | [Repo Evaluation](repos/pub-machine-2.md) | #machine-v2 #closed-loop #autonomy #pdl #neural #acp |
+| ✅ Adotar | **pub-machine-saas** | Versão multi-tenant SaaS do Machine para clientes externos, billing, white-label | [Repo Evaluation](repos/pub-machine-saas.md) | #saas #multi-tenancy #billing #white-label #stripe |
+| ✅ Adotar | **pubgrowth-ai-evolution** | SaaS growth agency: TanStack Start + Cloudflare Workers + Supabase RLS + Banco Inter PIX + mTLS | [Repo Evaluation](repos/pubgrowth-ai-evolution.md) | #saas #growth #cloudflare #supabase #pix #mtls #tanstack |
 
 ---
 
@@ -67,11 +90,11 @@
 
 ## 📊 Estatísticas Rápidas
 
-- **Total de descobertas:** 10
-- **Adotados:** 5
+- **Total de descobertas:** 27 (10 externos + 17 internos)
+- **Adotados:** 22 (5 externos + 17 internos)
 - **Em avaliação:** 0
-- **Monitorando:** 4
-- **Referência:** 1
+- **Monitorando:** 4 (externos)
+- **Referência:** 1 (externo)
 - **Descartados:** 0
 
 ---
