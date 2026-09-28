@@ -605,3 +605,109 @@ Future implementation work must update this context when architecture, constrain
 - This architecture therefore treats the authenticated browser as a first-class access layer rather than assuming anonymous HTTP access.
 
 **Important:** This document describes the intended architecture and does not assert that every Instagram post or every media URL will always be technically extractable. Extraction capability must be validated against real Instagram behavior during implementation.
+
+
+## 21. Architecture decision — multichannel Research Engine
+
+**Decision date:** 2026-09-28
+
+The Instagram workflow is the first concrete use case because it matches the current human research behavior. It must **not** define the boundaries of PUB Research.
+
+PUB Research will be designed as a **multichannel Research Engine** with source adapters.
+
+Initial and planned sources:
+
+- Instagram — first human-triggered source;
+- GitHub;
+- YouTube;
+- Reddit;
+- general web/search;
+- news;
+- documentation;
+- future approved sources.
+
+The architecture must avoid creating one-off products such as "Instagram Scraper", "Reddit Scraper", or "GitHub Scraper". Instead:
+
+```
+PUB Research Engine
+├── Instagram Adapter
+├── GitHub Adapter
+├── YouTube Adapter
+├── Reddit Adapter
+├── Web/Search Adapter
+├── News Adapter
+├── Documentation Adapter
+└── Future Source Adapters
+```
+
+Every adapter should normalize its output into a common Research Item contract while preserving source-specific evidence and provenance.
+
+### Human and autonomous research
+
+The same Research Engine must support two input modes:
+
+```
+Human
+  ↓
+interesting source
+  ↓
+share / trigger
+  ↓
+Research Engine
+
+Autonomous Agent
+  ↓
+research mission
+  ↓
+source discovery
+  ↓
+Research Engine
+```
+
+Both paths converge into the same extraction, analysis, qualification, provenance and persistence pipeline.
+
+### Research is destination-agnostic
+
+A research finding must not be classified solely by whether it serves PP or PDL.
+
+A finding may be relevant to:
+
+- any current PUB product;
+- any PUB infrastructure project;
+- any holding brand;
+- operations;
+- technology;
+- product strategy;
+- marketing/sales;
+- new ventures;
+- future products not yet created.
+
+PUB Research is therefore an **ecosystem-wide intelligence layer**, while downstream systems decide how qualified knowledge is consumed.
+
+### Canonical flow
+
+```
+SOURCE
+  ↓
+CAPTURE
+  ↓
+EXTRACT
+  ↓
+NORMALIZE
+  ↓
+ANALYZE
+  ↓
+QUALIFY
+  ↓
+PERSIST
+  ↓
+PUB NEURAL / ECOSYSTEM CONSUMERS
+  ↓
+SUGGESTION / DECISION / IMPLEMENTATION
+  ↓
+OBSERVED RESULT
+  ↓
+NEW RESEARCH SIGNAL
+```
+
+This architecture is now the canonical direction for future PUB Research implementation.
