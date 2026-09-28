@@ -196,7 +196,51 @@ The system should preserve:
 
 Credentials, cookies, session tokens and other secrets must never be stored in the research artifact.
 
-## 6. Human research → autonomous research
+## 6. Ecosystem-wide intelligence
+
+PUB Research is not downstream only to PP or PDL.
+
+Its intended role is to provide research intelligence to the **entire PUB ecosystem**.
+
+Research may generate useful knowledge, opportunities, decisions, patterns, references, product ideas, operational improvements, competitive intelligence, technical discoveries and implementation candidates for any relevant PUB initiative, including but not limited to:
+
+- PUB Neural
+- PP / Prototype
+- PDL / Dev Loop
+- PUB Ecom
+- PUB Leads
+- PUB IA / AI infrastructure
+- PUB ACP
+- PUB 9Router
+- PUB Machine
+- PUB Records / audio initiatives
+- holding brands and future businesses
+- shared infrastructure and governance
+- new products, brands and ventures created by the holding
+
+The relationship is therefore:
+
+```
+                         PUB RESEARCH
+                              │
+              ┌───────────────┼────────────────┐
+              │               │                │
+              ▼               ▼                ▼
+          PUB Neural      Ecosystem       Holding
+              │               │            Intelligence
+              │               │
+       ┌──────┴──────┐   ┌────┴────────────────────────────┐
+       ▼             ▼   ▼             ▼          ▼         ▼
+      PP            PDL  Ecom         Leads      IA       ACP
+       │             │
+       └─────────────┴─────────── ... ────────────┐
+                                                   ▼
+                                           New PUB ventures
+```
+
+PUB Research is therefore an **ecosystem intelligence layer**, not merely a feed for product development.
+
+## 7. Human research → autonomous research
 
 The initial product is human-triggered:
 
