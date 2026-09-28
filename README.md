@@ -1,170 +1,118 @@
-# 🧪 PUB Research — Laboratório de Repositórios para Aplicação nos Projetos PUB
+# 🧠 PUB Research — Research Intelligence Engine
 
-> **Organização:** [pubcoreagencia](https://github.com/pubcoreagencia)  
-> **Propósito:** Catálogo curado de repositórios (externos + internos) prontos para **reuso, integração e aplicação prática** nos produtos da holding PUB.
+> **Propósito:** infraestrutura de pesquisa, captura, extração, análise, qualificação e persistência de inteligência para todo o ecossistema PUB e, progressivamente, para a holding.
 
----
+PUB Research mantém o laboratório de componentes e integrações reutilizáveis, mas seu papel canônico agora inclui o Research Engine multicanal.
 
-## 🎯 **O que é (e o que NÃO é)**
+## O que é
 
-| ✅ **É** | ❌ **Não é** |
-|----------|--------------|
-| Laboratório de **componentes reutilizáveis** | Pub Neural (memória institucional) |
-| **Como aplicar** em cada projeto PUB | Arquivo morto de links |
-| Decisão: **Adotar / Adaptar / Monitorar / Descartar** | Bookmark collection |
-| Código, configs, patterns **prontos para uso** | Teoria sem prática |
-| Foco: **velocidade de integração** | Documentação exhaustiva |
+- Research Engine multicanal
+- Camada de inteligência para todo o ecossistema PUB
+- Evidência bruta separada de interpretação de IA
+- Arquitetura baseada em source adapters
+- Destino-agnóstico
 
----
+Não é um scraper específico de Instagram, uma fonte exclusiva para PP/PDL ou um arquivo morto de links.
 
-## 📁 **Estrutura Orientada à Aplicação**
+## Primeira aplicação
+
+Instagram é o primeiro caso de uso porque corresponde ao fluxo atual de pesquisa humana: encontrar algo relevante e compartilhar o post em um grupo dedicado. Isso não limita o sistema.
+
+Fontes previstas: Instagram, GitHub, YouTube, Reddit, Web/Search, News, Documentation e futuras fontes aprovadas.
+
+## Fluxo canônico
+
+```
+SOURCE → CAPTURE → EXTRACT → NORMALIZE → ANALYZE → QUALIFY → PERSIST
+→ PUB NEURAL / ECOSYSTEM CONSUMERS
+→ SUGGESTION / DECISION / IMPLEMENTATION
+→ OBSERVED RESULT → NEW RESEARCH SIGNAL
+```
+
+Pesquisa humana e pesquisa autônoma convergem para o mesmo Research Engine.
+
+## Pesquisa multimodal
+
+Quando legitimamente acessível, a captura pode preservar texto, caption, hashtags, mentions, autor, timestamp, tipo de publicação, imagens, carrosséis, vídeo/reels, áudio, transcrição, OCR, descrição visual, entidades, produtos, marcas, ofertas, CTAs, links e metadados visíveis.
+
+A evidência original deve permanecer distinguível da interpretação derivada por IA.
+
+## Proveniência
+
+```
+SOURCE URL → CAPTURE → RAW EVIDENCE → OCR / TRANSCRIPTION
+→ AI ANALYSIS → QUALIFICATION → DOWNSTREAM SUGGESTION
+→ IMPLEMENTATION / VALIDATION
+```
+
+Credenciais, cookies, tokens de sessão e outros segredos não pertencem aos Research Items. O sistema deve respeitar permissões e limites de acesso e não contornar autenticação, CAPTCHA ou outros controles.
+
+## Research Item
+
+Contrato conceitual: source, source_type, url, author, timestamp, raw_content, media, transcript, ocr, entities, topics, claims, products, brands, insights, opportunities, relevance, qualification, provenance e downstream_candidates.
+
+Idempotência deve usar identificador estável da fonte quando disponível, com URL normalizada como fallback.
+
+Estados: RECEIVED → OPENING → CAPTURED → EXTRACTING → ANALYZING → QUALIFYING → COMPLETED, com PARTIAL / BLOCKED / FAILED / RETRYING para exceções.
+
+## Source Adapters
+
+```
+Research Engine
+├── Instagram Adapter
+├── GitHub Adapter
+├── YouTube Adapter
+├── Reddit Adapter
+├── Web/Search Adapter
+├── News Adapter
+├── Documentation Adapter
+└── Future approved adapters
+```
+
+Cada adapter traduz a fonte para o contrato comum de Research Item e preserva evidências específicas da fonte.
+
+## Destino-agnóstico
+
+Uma descoberta pode alimentar PUB Neural, PP / Prototype, PDL / Dev Loop, PUB Ecom, PUB Leads, PUB IA, PUB ACP, PUB 9Router, PUB Machine, PUB Records, marcas da holding, infraestrutura compartilhada ou novos produtos e ventures.
+
+PUB Research é uma camada de inteligência do ecossistema, não um pipeline de um produto específico.
+
+## Autonomia progressiva
+
+MVP: compartilhar uma fonte → captura automática → extração multimodal → persistência de Research Item completo e rastreável.
+
+Depois: missão → descoberta → captura → extração → análise → qualificação → persistência → novas perguntas.
+
+Governança: Evidence → Research → Qualification → Suggestion → Human / governed authorization → Implementation → Validation.
+
+## Feedback loop
+
+Research → Suggestion → Implementation → Production Result → Observed Outcome → New Research Signal → Research.
+
+## Estrutura
 
 ```
 pub-research/
-├── components/           # 🧩 Componentes prontos para integrar
-│   ├── ui/              # Design systems, component libs, icons
-│   ├── audio/           # WebAudio, VST, DSP, DAW components
-│   ├── ai/              # Model routing, fallback chains, RAG, agents
-│   ├── scraping/        # Crawlers, browser automation, extractors
-│   ├── auth/            # Auth patterns, scoped permissions, mTLS
-│   └── infra/           # Monorepo, multi-tenancy, edge deploy
-├── integrations/        # 🔌 Guias de integração por projeto PUB
-│   ├── pub-machine/     # O que usar no Machine (v1, v2, SaaS)
-│   ├── pub-records/     # O que usar no Records (DAW, Beats, Audio Lab)
-│   ├── pub-ia/          # O que usar no IA Hub (models, routing, fine-tune)
-│   ├── pub-ecom/        # O que usar no Ecom (catalog, import actors)
-│   ├── pubgrowth/       # O que usar no PubGrowth (Cloudflare, PIX, RLS)
-│   ├── pub-acp/         # O que usar no ACP (bridge, NDJSON, Antigravity)
-│   └── pub-9router/     # O que usar no 9Router (routing, metrics)
-├── decisions/           # ⚖️ Decisões de adoção (ADR-style)
-│   ├── ADOPTED/         # Já integrados + como usar
-│   ├── ADAPTING/        # Em adaptação + blockers
-│   ├── MONITORING/      # Acompanhando + critérios de adoção
-│   └── DISCARDED/       # Avaliados + por que não
-├── benchmarks/          # 📊 Benchmarks reais (não teóricos)
-│   ├── models/          # Free vs paid, latency, quality, cost
-│   ├── scraping/        # Crawl4AI vs browser-use vs Scrapling
-│   ├── audio/           # WebAudio vs native VST vs WASM
-│   └── routing/         # 9Router vs OpenRouter vs custom
-├── templates/           # 📋 Templates de avaliação + integração
-│   ├── component-evaluation.md
-│   ├── integration-guide.md
-│   ├── benchmark-template.md
-│   └── decision-record.md
-└── INDEX.md             # 📇 Catálogo único navegável
+├── components/
+├── integrations/
+├── decisions/
+├── benchmarks/
+├── templates/
+├── docs/
+└── INDEX.md
 ```
 
----
+O contexto canônico está em docs/INSTAGRAM-RESEARCH-AUTONOMY-MASTER-CONTEXT.md.
 
-## 🔄 **Fluxo do Laboratório**
+## Governança
 
-```
-DESCOBRIR
-    │
-    ▼
-AVALIAR (template component-evaluation.md)
-    │
-    ├──→ ADOTAR → INTEGRAR (template integration-guide.md) → DOCUMENTAR em decisions/ADOPTED
-    ├──→ ADAPTAR → PROTOTIPAR → VALIDAR → ADOTAR
-    ├──→ MONITORAR → CRITÉRIOS claros de reavaliação
-    └──→ DESCARTAR → REGISTRAR motivo em decisions/DISCARDED
-```
+1. Evidência e interpretação devem ser distinguíveis.
+2. Descobertas importantes devem manter proveniência.
+3. Segredos não devem ser persistidos como pesquisa.
+4. Acesso automatizado deve respeitar os limites legítimos da fonte.
+5. Decisões de adoção permanecem rastreáveis.
+6. Pesquisa pode alimentar qualquer parte do ecossistema.
+7. Autonomia deve crescer de forma governada e auditável.
+8. O Research Engine deve privilegiar evidência verificável.
 
----
-
-## 📦 **Catálogo Atual (27 componentes)**
-
-### 🔧 **Por Categoria Técnica**
-
-| Categoria | Componentes | Status |
-|-----------|-------------|--------|
-| **UI / Design System** | shadcn/ui + Radix, Lucide Icons, Tailwind Plugins, Excalidraw | ✅ Adotar |
-| **IA / Model Routing** | PUB IA Hub, 9Router Cloud, OpenRouter (4 free models), Context7 | ✅ Adotar / 👀 Monitorar |
-| **Agentes / ACP** | pub-acp-lab (ACP Bridge), browser-use, Crawl4AI, Automated Agentic Agency (ref) | ✅ Adotar / 👀 Monitorar |
-| **Audio / Music** | XP Audio Lab (VST/WASM), PUB DAW, WebAudio stack | ✅ Adotar |
-| **Scraping / Data** | pub-scrapping, Crawl4AI, browser-use, Scrapling (monitor) | ✅ Adotar / 👀 Monitorar |
-| **Infra / SaaS** | pubgrowth (Cloudflare+Supabase+PIX), pub-machine-saas (multi-tenant), monorepo patterns | ✅ Adotar |
-| **Governance** | pub-core-os (Git closure, master context), neural-os (authority hierarchy) | ✅ Adotar |
-
-### 🎯 **Por Projeto PUB (Onde Aplicar)**
-
-| Projeto PUB | Componentes Recomendados | Integração |
-|-------------|--------------------------|------------|
-| **pub-machine** (v1/v2/SaaS) | pub-scrapping, Crawl4AI, browser-use, leadcore, 9Router, pub-acp-lab | `integrations/pub-machine/` |
-| **pub-records** (DAW/Beats/Label) | XP Audio Lab, WebAudio stack, Excalidraw (storyboard), shadcn/ui | `integrations/pub-records/` |
-| **pub-ia** (Hub IA) | 9Router Cloud, OpenRouter free models, Context7 (monitor), fine-tune pipeline | `integrations/pub-ia/` |
-| **pub-ecom** | Monorepo patterns, Catalog worker, Browser import actors, TanStack Start | `integrations/pub-ecom/` |
-| **pubgrowth** | Cloudflare Workers, Supabase RLS, Banco Inter PIX, mTLS, AI Continuity | `integrations/pubgrowth/` |
-| **pub-acp** | ACP Bridge, NDJSON protocol, Antigravity CLI, Scoped permissions | `integrations/pub-acp/` |
-| **pub-9router** | Model routing, Metrics dashboard, Encrypted DB, Fallback chains | `integrations/pub-9router/` |
-
----
-
-## ⚡ **Quick Start: Como Usar Este Laboratório**
-
-### 1. **Preciso de X no projeto Y**
-```bash
-# 1. Veja INDEX.md → procure categoria ou projeto
-# 2. Leia a avaliação em components/ ou decisions/ADOPTED/
-# 3. Siga integration-guide.md do componente
-# 4. Registre decisões no seu projeto
-```
-
-### 2. **Encontrei um repo interessante**
-```bash
-# 1. Crie avaliação em components/<categoria>/<nome>.md (use template)
-# 2. Rode benchmark se aplicável (benchmark-template.md)
-# 3. Decida: ADOTAR/ADAPTAR/MONITORAR/DESCARTAR
-# 4. Se ADOTAR: crie integration-guide.md + mova para decisions/ADOPTED/
-# 5. Atualize INDEX.md
-```
-
-### 3. **Quero benchmarkar alternativas**
-```bash
-# 1. Crie benchmark em benchmarks/<categoria>/<nome>.md
-# 2. Execute testes reais (não teóricos)
-# 3. Documente: métricas, custos, latência, facilidade integração
-# 4. Atualize decisões afetadas
-```
-
----
-
-## 📋 **Templates Disponíveis** (`templates/`)
-
-| Template | Para que serve |
-|----------|----------------|
-| `component-evaluation.md` | Avaliar novo componente (técnico + negócio + integração) |
-| `integration-guide.md` | Documentar como integrar em projeto específico |
-| `benchmark-template.md` | Benchmark comparativo com métricas reais |
-| `decision-record.md` | Registrar decisão ADR-style (contexto, decisão, consequências) |
-
----
-
-## 🏷️ **Tags de Navegação**
-
-`#ui` `#design-system` `#ai` `#models` `#routing` `#agents` `#acp` `#audio` `#webaudio` `#vst` `#wasm` `#scraping` `#crawling` `#browser-automation` `#saas` `#multi-tenancy` `#cloudflare` `#supabase` `#pix` `#mtls` `#monorepo` `#governance` `#adopted` `#monitoring` `#reference` `#discarded`
-
----
-
-## 🔗 **Links Rápidos**
-
-- **Catálogo completo:** [INDEX.md](INDEX.md)
-- **Decisões de adoção:** `decisions/ADOPTED/`
-- **Guias de integração por projeto:** `integrations/`
-- **Benchmarks:** `benchmarks/`
-- **Templates:** `templates/`
-
----
-
-## 📝 **Governança do Laboratório**
-
-1. **Toda descoberta passa por avaliação** (template obrigatório)
-2. **Benchmark real > documentação do vendor**
-3. **Decisão registrada = rastreável** (ADR em `decisions/`)
-4. **Integração documentada = reutilizável** (guide em `integrations/`)
-5. **Revisão trimestral** de `MONITORING` → mover para `ADOPTED` ou `DISCARDED`
-6. **Owner:** Squad PUB Research (Matheus + Genildo3000)
-
----
-
-*Mantido pela equipe PUB — Hub de Criação e Produção Musical* 🎧
+*PUB Research — inteligência de pesquisa para o ecossistema PUB e, progressivamente, para a holding.*
